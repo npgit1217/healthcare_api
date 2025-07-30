@@ -14,12 +14,13 @@ php artisan key:generate
 php artisan migrate --seed
 php artisan serve
 
-### API :: you can check on postman
+## API :: You can check on postman
+
 - Register: POST /api/register
 
 - Login: POST /api/login → receive token
 
-- Use Bearer TOKEN in Authorization header
+- Use Bearer TOKEN in Authorization header, Accept:application/json in header
 
 - Book: POST /api/appointments
 
