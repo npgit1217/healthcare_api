@@ -11,15 +11,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy source files
+# Copy app files
 COPY . .
 
-# Install Laravel dependencies
-RUN composer install --no-interaction --prefer-dist
+# Install PHP dependencies
+RUN composer install --no-interaction
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www \
-    && chmod -R 755 /var/www/storage
-
-EXPOSE 9000
-CMD ["php-fpm"]
+RUN chmod -R 777 storage bootstrap/cache

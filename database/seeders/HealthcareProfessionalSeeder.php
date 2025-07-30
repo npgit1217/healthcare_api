@@ -14,11 +14,11 @@ class HealthcareProfessionalSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ['name' => 'Dr. Aditi Sharma', 'specialty' => 'Cardiologist'],
+            ['name' => 'Dr. Neha Jain', 'specialty' => 'Cardiologist'],
             ['name' => 'Dr. Neeraj Patel', 'specialty' => 'Dermatologist'],
-            ['name' => 'Dr. Reena Verma', 'specialty' => 'Neurologist'],
-            ['name' => 'Dr. Sameer Khan', 'specialty' => 'Pediatrician'],
-            ['name' => 'Dr. Shweta Singh', 'specialty' => 'General Physician'],
+            ['name' => 'Dr. Reeta Sharma', 'specialty' => 'Neurologist'],
+            ['name' => 'Dr. Sameer Thanker', 'specialty' => 'Pediatrician'],
+            ['name' => 'Dr. Nilay Mehta', 'specialty' => 'General Physician'],
         ];
 
         foreach ($data as $item) {
