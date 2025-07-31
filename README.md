@@ -54,6 +54,7 @@ password :: 123456
 ----------------------------------
 
 Method: POST
+
 URL: http://127.0.0.1:8000/api/register
 
 Headers:
@@ -67,6 +68,7 @@ Body (JSON):
 --------------------------------------------------------------
 
 Method: POST
+
 URL: http://127.0.0.1:8000/api/login
 
 Headers:
@@ -78,21 +80,27 @@ Body (JSON):
 
 ------------------------------------------
 Method: GET
+
 URL: http://127.0.0.1:8003/api/professionals
+
 Headers:
 	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
 	Content-Type: application/json
 
 ------------------------------------------
 Method: GET
+
 URL: http://127.0.0.1:8000/api/appointments
+
 Headers:
 	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
 	Content-Type: application/json
 ------------------------------------------
 
 Method: POST
+
 URL: http://127.0.0.1:8000/api/appointments
+
 Headers:
 	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
 	Content-Type: application/json
@@ -105,7 +113,9 @@ Body (JSON):
 ------------------------------------------
 
 Method: PUT
+
 URL: http://127.0.0.1:8000/api/appointments/1/cancel
+
 Headers:
 
 	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
@@ -114,7 +124,9 @@ Headers:
 ------------------------------------------
 
 Method: PUT
+
 URL: http://127.0.0.1:8000/api/appointments/1/complete
+
 Headers:
 
 	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
