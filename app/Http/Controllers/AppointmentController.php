@@ -14,7 +14,14 @@ class AppointmentController extends Controller
 
     public function index(Request $request)
     {
-        return $request->user()->appointments()->with('healthcareProfessional')->get();
+        try {
+
+            return $request->user()
+                            ->appointments()
+                            ->with('healthcareProfessional')->get();
+         } catch (\Exception $e) {
+            return response()->json(['message' => 'Error fetching appointments'], 500);
+        }
     }
 
     public function store(Request $request)
@@ -68,6 +75,7 @@ class AppointmentController extends Controller
 
     public function cancel($id, Request $request)
     {
+        
         try {
         $appointment = Appointment::where('id', $id)
             ->where('user_id', $request->user()->id)
@@ -77,8 +85,10 @@ class AppointmentController extends Controller
             return response()->json(['message' => 'Cannot cancel within 24 hours'], 403);
         }
 
-        $appointment->update(['status' => 'cancelled']);
-
+     
+   
+        $appointment->update(['status' => 'cancelled']); 
+       
         return response()->json(['message' => 'Appointment cancelled']);
 
         } catch (\Exception $e) {
