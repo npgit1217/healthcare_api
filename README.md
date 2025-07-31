@@ -4,7 +4,6 @@
 
 ## Clone the repository
 
-```bash
 git clone <repo-url>
 cd healthcare_api
 
@@ -14,6 +13,23 @@ cp .env.example .env
 php artisan key:generate
 php artisan migrate --seed
 php artisan serve
+
+==================================
+git clone <repo-url>
+cd healthcare-api
+docker-compose up -d
+
+docker exec -it laravel_app bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+exit
+
+API: http://localhost:8080
+
+MySQL: port 3306 (user / password)
+==================================
 
 ## API :: You can check on postman
 
@@ -37,7 +53,6 @@ password :: 123456
 
 ----------------------------------
 
-===========================
 Method: POST
 URL: http://127.0.0.1:8000/api/register
 
@@ -62,20 +77,21 @@ Body (JSON):
 	password:123456
 
 ------------------------------------------
-
-Method: POST
-URL: http://127.0.0.1:8000/api/appointments
+Method: GET
+URL: http://127.0.0.1:8003/api/professionals
 Headers:
 	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
 	Content-Type: application/json
 
-Body (JSON):
-	healthcare_professional_id:1
-	appointment_start_time:2025-08-05 10:30:00
-	appointment_end_time:2025-08-05 11:00:00
-
 ------------------------------------------
 Method: GET
+URL: http://127.0.0.1:8000/api/appointments
+Headers:
+	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
+	Content-Type: application/json
+------------------------------------------
+
+Method: POST
 URL: http://127.0.0.1:8000/api/appointments
 Headers:
 	Authorization: Bearer 2|4Df3GCwCAUBw29ZFTTNBdVF8pIl0prAvn91AVIiM6adba485
@@ -97,7 +113,7 @@ Headers:
 
 ------------------------------------------
 
-Method: POST
+Method: PUT
 URL: http://127.0.0.1:8000/api/appointments/1/complete
 Headers:
 
